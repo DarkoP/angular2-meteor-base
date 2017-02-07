@@ -1,13 +1,17 @@
 import { Component } from "@angular/core";
+
+import { Platform } from 'ionic-angular';
+import { StatusBar } from 'ionic-native';
 import template from "./app.component.html";
-import style from "./app.component.scss";
 
 @Component({
   selector: "app",
-  template,
-  styles: [ style ]
+  template
 })
 export class AppComponent {
-  constructor() {
+  constructor(platform: Platform) {
+    platform.ready().then(() => {
+      StatusBar.styleDefault();
+    });
   }
 }
