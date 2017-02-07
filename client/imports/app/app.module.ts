@@ -1,14 +1,11 @@
-import { NgModule } from "@angular/core";
-import { BrowserModule } from "@angular/platform-browser";
-import { AppComponent } from "./app.component";
-import { DemoComponent } from "./demo/demo.component";
-import { DemoDataService } from "./demo/demo-data.service";
+import { NgModule } from '@angular/core';
+import { AppComponent } from './app.component';
+import { IonicApp, IonicModule } from 'ionic-angular';
 
 @NgModule({
   // Components, Pipes, Directive
   declarations: [
-    AppComponent,
-    DemoComponent
+    AppComponent
   ],
   // Entry Components
   entryComponents: [
@@ -16,17 +13,13 @@ import { DemoDataService } from "./demo/demo-data.service";
   ],
   // Providers
   providers: [
-    DemoDataService
+
   ],
   // Modules
   imports: [
-    BrowserModule
+    IonicModule.forRoot(AppComponent)
   ],
   // Main Component
-  bootstrap: [ AppComponent ]
+  bootstrap: [ IonicApp ]
 })
-export class AppModule {
-  constructor() {
-
-  }
-}
+export class AppModule {}
